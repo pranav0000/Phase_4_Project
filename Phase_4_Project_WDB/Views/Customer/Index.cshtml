@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Phase_4_Project_WDB.Models.Customer_Records>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@{
+    var list = ViewBag.customer_list;
+}
+
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>Customer Uname</th>
+            <th>Customer Password</th>
+            <th>Cutomer Email</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            foreach (var item in list)
+            {
+                <tr>
+                    <td>@item.CustomerId</td>
+                    <td>@item.CustomerName</td>
+                    <td>@item.CustomerUname</td>
+                    <td>@item.CustomerPwd</td>
+                    <td>@item.CustomerEmail</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<hr />
+
+<br />

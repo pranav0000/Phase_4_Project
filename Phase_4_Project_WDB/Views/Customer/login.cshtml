@@ -1,0 +1,27 @@
+﻿@model Phase_4_Project_WDB.Models.Customer_Records;
+<h1>Customer Login</h1>
+<hr />
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CustomerUname" class="control-label"></label>
+                <input asp-for="CustomerUname" class="form-control" />
+                <span asp-validation-for="CustomerUname" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="CustomerPwd" class="control-label"></label>
+                <input asp-for="CustomerPwd" class="form-control" />
+                <span asp-validation-for="CustomerPwd" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" name="btn_login" id="btn_login" />
+            </div>
+        </form>
+        <b id="incorrect_creds">@ViewBag.msg</b>
+    </div>
+</div>
